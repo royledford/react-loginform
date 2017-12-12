@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
+
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
+import { brandcolor } from '../../styles/colors'
 
 export default class PrivacyPolicy extends Component {
   constructor(props) {
@@ -17,7 +19,9 @@ export default class PrivacyPolicy extends Component {
 
   render() {
     const { directToSignup } = this.state
-    const actions = [<FlatButton label="Close" primary={true} onClick={this.handleClose} />]
+    const actions = [
+      <FlatButton label="Close" primary={true} labelStyle={{ color: brandcolor }} onClick={this.handleClose} />,
+    ]
 
     if (directToSignup) {
       return <Redirect to="/signup" />
@@ -32,25 +36,25 @@ export default class PrivacyPolicy extends Component {
           autoScrollBodyContent={true}
         >
           <div>
-            <h3>SpeedETab Privacy Policy/Your Privacy Rights</h3>
+            <h3>||companyname|| Privacy Policy/Your Privacy Rights</h3>
 
             <h1>Overview</h1>
 
             <p>
-              Welcome to SpeedETab! The SpeedETab website and service are provided by SpeedETab, Inc. (“SpeedETab”,
-              “we”, “us” or “our”). SpeedETab knows that you care how information about you is used and shared, and we
-              appreciate your trust that we will do so carefully and sensibly. This notice describes our Privacy Policy
-              for the www.speedetab.com website (the “Website”), through downloadable applications we make available to
-              you (the “App”) or through the services made available by SpeedETab through the Website or the App
-              (together with the Website and the App, the “Services”). Capitalized terms used but not defined in this
-              Privacy Policy shall have the meaning set forth in the Terms of Service. The Services provide a way for
-              patrons of a bar, restaurant or other entertainment location to order and pay for drinks, food or other
-              entertainment from an App.
+              Welcome to ||companyname||! The ||companyname|| website and service are provided by ||companyname||, Inc.
+              (“||companyname||”, “we”, “us” or “our”). ||companyname|| knows that you care how information about you is
+              used and shared, and we appreciate your trust that we will do so carefully and sensibly. This notice
+              describes our Privacy Policy for the www.||companyname||.com website (the “Website”), through downloadable
+              applications we make available to you (the “App”) or through the services made available by
+              ||companyname|| through the Website or the App (together with the Website and the App, the “Services”).
+              Capitalized terms used but not defined in this Privacy Policy shall have the meaning set forth in the
+              Terms of Service. The Services provide a way for patrons of a bar, restaurant or other entertainment
+              location to order and pay for drinks, food or other entertainment from an App.
             </p>
 
             <p>
               If you have questions or concerns regarding this Privacy Policy, you should contact our privacy group by
-              sending an email to privacy@speedetab.com.
+              sending an email to privacy@||companyname||.com.
             </p>
 
             <p>
@@ -102,9 +106,9 @@ export default class PrivacyPolicy extends Component {
             </p>
 
             <p>
-              By using our Services, you indicate your consent for SpeedETab and our affiliates to send cookies to your
-              computer in order to uniquely identify your browser and improve the quality of our services; you may turn
-              off cookies in your browser though, in doing so, some or all of our services may not work. For a
+              By using our Services, you indicate your consent for ||companyname|| and our affiliates to send cookies to
+              your computer in order to uniquely identify your browser and improve the quality of our services; you may
+              turn off cookies in your browser though, in doing so, some or all of our services may not work. For a
               description of how cookies work, please see the section entitled “Cookies” below.
             </p>
 
@@ -290,8 +294,8 @@ export default class PrivacyPolicy extends Component {
             <p>
               If you choose to use our referral service (if available) to tell a friend about our Services, we will ask
               you for your friend’s name and email address. We will automatically send your friend a one-time email
-              inviting him or her to visit the Website or App. SpeedETab stores this information for the sole purpose of
-              sending this one-time email and tracking the success of our referral program.
+              inviting him or her to visit the Website or App. ||companyname|| stores this information for the sole
+              purpose of sending this one-time email and tracking the success of our referral program.
             </p>
 
             <h2>Communication from Us or the Website</h2>
@@ -334,7 +338,7 @@ export default class PrivacyPolicy extends Component {
               Based upon the Personal Information you provide us, we will send you a welcoming email to verify your
               username and password. We will communicate with you in response to your inquiries, to provide the services
               you request, and to manage your account. We will communicate with you by email or telephone, in accordance
-              with your wishes. You may contact customer service at contact@speedetab.com.
+              with your wishes. You may contact customer service at contact@||companyname||.com.
             </p>
 
             <h3>Profile </h3>
@@ -403,14 +407,14 @@ export default class PrivacyPolicy extends Component {
             <p>
               If you no longer wish to receive our newsletter and promotional communications, if any, you may opt-out of
               receiving them by following the instructions included in each newsletter or communication or by emailing
-              us at privacy@speedetab.com.
+              us at privacy@||companyname||.com.
             </p>
 
             <h1>Links to Other Websites</h1>
 
             <p>
-              The Website contains links to other websites that are not owned or controlled by SpeedETab. Please be
-              aware that we are not responsible for the privacy policies of such other websites.
+              The Website contains links to other websites that are not owned or controlled by ||companyname||. Please
+              be aware that we are not responsible for the privacy policies of such other websites.
             </p>
 
             <p>
@@ -425,7 +429,7 @@ export default class PrivacyPolicy extends Component {
             <p>
               If your Personal Information changes, or if you no longer desire our service, you may correct, update,
               delete or deactivate it by making the change on our member information page or by emailing our Customer
-              Support at privacy@speedetab.com or by contacting us by telephone or postal mail at the contact
+              Support at privacy@||companyname||.com or by contacting us by telephone or postal mail at the contact
               information listed below.
             </p>
 
@@ -451,16 +455,18 @@ export default class PrivacyPolicy extends Component {
               means to protect your Personal Information, we cannot guarantee its absolute security.
             </p>
 
-            <p>If you have any questions about security on our Services, you can email us at privacy@speedetab.com.</p>
+            <p>
+              If you have any questions about security on our Services, you can email us at privacy@||companyname||.com.
+            </p>
 
             <p>Children Under 18 and Adults Under 21</p>
 
             <p>
               Our Services are not directed to people under 21 years of age. If you become aware that your child has
-              provided us with Personal Information without your consent, please contact us at privacy@speedetab.com. We
-              do not knowingly collect Personal Information from children under 18. If we become aware that a child
-              under 18 has provided us with Personal Information, we take steps to remove that information and terminate
-              the applicable account.
+              provided us with Personal Information without your consent, please contact us at
+              privacy@||companyname||.com. We do not knowingly collect Personal Information from children under 18. If
+              we become aware that a child under 18 has provided us with Personal Information, we take steps to remove
+              that information and terminate the applicable account.
             </p>
 
             <p>Terms of Service</p>
@@ -494,7 +500,7 @@ export default class PrivacyPolicy extends Component {
 
             <p>
               If you have any questions or suggestions regarding our Privacy Policy, please contact us at:
-              privacy@speedetab.com.
+              privacy@||companyname||.com.
             </p>
 
             <p>California Residents - Your California Privacy Rights</p>
@@ -503,7 +509,7 @@ export default class PrivacyPolicy extends Component {
               If you are a resident of California, you have the right to request a list of third parties to whom we have
               disclosed your Personal Information for their direct marketing purposes during the preceding year,
               pursuant to California Civil Code Section 1798.83. To make such a request, please send an email to
-              privacy@speedetab.com or write to us at 599 SW 2nd Avenue, Fort Lauderdale, FL 33301.
+              privacy@||companyname||.com or write to us at 599 SW 2nd Avenue, Fort Lauderdale, FL 33301.
             </p>
 
             <br />

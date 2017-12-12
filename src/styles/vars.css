@@ -1,7 +1,11 @@
-.grey500 {
-  color: #9e9e9e
+:root {
+  --brandcolor: #e29727;
 }
 
-.speedGreen {
-  color: #54C0A0;
+.grey500 {
+  color: #9e9e9e;
+}
+
+.brandcolor {
+  color: #e29727;
 }

@@ -35,19 +35,19 @@
 }
 
 .signup-link:link {
-  color: #54c0a0;
+  color: var(--brandcolor);
   text-decoration: none;
 }
 
 .signup-link:visited {
-  color: #54c0a0;
+  color: var(--brandcolor);
 }
 
 .signup-link:hover {
-  color: #54c0a0;
+  color: var(--brandcolor);
   font-weight: 300;
 }
 
 .signup-link:active {
-  color: #54c0a0;
+  color: var(--brandcolor);
 }

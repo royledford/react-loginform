@@ -7,9 +7,9 @@ import {
   getEmailErrorMsg,
   getPasswordErrorMsg,
   getPasswordConfirmErrorMsg,
-} from '../../Helpers/validation'
+} from '../../helpers/validation'
 import AuthService from '../../Services/AuthService'
-import { getEmailErrors, getPasswordErrors } from '../../Helpers/helpers'
+import { getEmailErrors, getPasswordErrors } from '../../helpers/helpers'
 
 import Signup from './Signup'
 
@@ -30,10 +30,11 @@ export default class LoginContainer extends Component {
       snackMessage: '',
       showSnack: false,
       redirectToHome: false,
+
       loading: false,
+      submitFailed: false,
     }
 
-    // Adding because 'this' isn't available in the method.
     this.handleTerms = this.handleTerms.bind(this)
   }
 
@@ -68,6 +69,8 @@ export default class LoginContainer extends Component {
   }
 
   handleEmailValidation = event => {
+    if (!this.state.submitFailed) return
+
     const enteredValue = event.target.value
     if (emailValid(enteredValue)) {
       this.setState({ emailErrorMsg: '' })
@@ -77,6 +80,8 @@ export default class LoginContainer extends Component {
   }
 
   handlePasswordValidation = event => {
+    if (!this.state.submitFailed) return
+
     const enteredValue = event.target.value
     if (passwordValid(enteredValue)) {
       this.setState({ passwordErrorMsg: '' })
@@ -136,6 +141,7 @@ export default class LoginContainer extends Component {
         snackMessage: snackMsg,
         showSnack: true,
         loading: false,
+        submitFailed: true,
       })
     }
   }

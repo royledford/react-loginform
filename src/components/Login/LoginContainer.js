@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { emailValid, passwordValid, getEmailErrorMsg, getPasswordErrorMsg } from '../../Helpers/validation'
-import { getEmailErrors, getPasswordErrors } from '../../Helpers/helpers'
+import { emailValid, passwordValid, getEmailErrorMsg, getPasswordErrorMsg } from '../../helpers/validation'
+import { getEmailErrors, getPasswordErrors } from '../../helpers/helpers'
 import AuthService from '../../Services/AuthService'
 import Login from './Login'
 
@@ -17,6 +17,7 @@ export default class LoginContainer extends Component {
       showSnack: false,
       redirectToHome: false,
       loading: false,
+      submitFailed: false,
     }
   }
 
@@ -36,7 +37,10 @@ export default class LoginContainer extends Component {
   }
 
   handleEmailValidation = event => {
+    if (!this.state.submitFailed) return
+
     const value = event.target.value
+
     if (emailValid(value)) {
       this.setState({ emailErrorMsg: '' })
     } else {
@@ -45,6 +49,8 @@ export default class LoginContainer extends Component {
   }
 
   handlePasswordValidation = event => {
+    if (!this.state.submitFailed) return
+
     const value = event.target.value
     if (passwordValid(value)) {
       this.setState({ passwordErrorMsg: '' })
@@ -58,7 +64,7 @@ export default class LoginContainer extends Component {
     const { email, password } = this.state
 
     if (emailValid(email) && passwordValid(password)) {
-      this.setState({ loading: true })
+      this.setState({ loading: true, submitFailed: false })
       this.loginUser()
     } else {
       this.setState({
@@ -67,6 +73,7 @@ export default class LoginContainer extends Component {
         passwordErrorMsg: getPasswordErrorMsg(password),
         snackMessage: 'Please see above for items that need attention.',
         showSnack: true,
+        submitFailed: true,
       })
     }
   }
@@ -83,7 +90,7 @@ export default class LoginContainer extends Component {
     AuthService.submitLogin(authParams)
       .then(function(response) {
         localStorage.setItem('authToken', response.data.token.key)
-
+        console.log('good')
         self.setState({
           redirectToHome: true,
           loading: false,
@@ -107,7 +114,16 @@ export default class LoginContainer extends Component {
   }
 
   render() {
-    const { email, password, emailErrorMsg, passwordErrorMsg, redirectToHome, snackMessage, showSnack, loading } = this.state
+    const {
+      email,
+      password,
+      emailErrorMsg,
+      passwordErrorMsg,
+      redirectToHome,
+      snackMessage,
+      showSnack,
+      loading,
+    } = this.state
 
     if (redirectToHome) {
       return <Redirect to="/" />

@@ -9,6 +9,7 @@ import Checkbox from 'material-ui/Checkbox'
 import Snackbar from 'material-ui/Snackbar'
 import LinearProgress from 'material-ui/LinearProgress'
 import { red700 } from 'material-ui/styles/colors'
+import { brandcolor } from '../../styles/colors'
 import './Signup.css'
 
 export default class Login extends Component {
@@ -32,6 +33,7 @@ export default class Login extends Component {
 
     snackMessage: PropTypes.string,
     showSnack: PropTypes.bool,
+
     loading: PropTypes.bool,
   }
   static defaultProps = {
@@ -51,7 +53,6 @@ export default class Login extends Component {
   }
 
   render() {
-    const speedGreen = '#54C0A0'
     const {
       email,
       password,
@@ -87,10 +88,10 @@ export default class Login extends Component {
         width: 128,
       },
       underlineStyle: {
-        borderColor: speedGreen,
+        borderColor: brandcolor,
       },
       labelStyle: {
-        color: speedGreen,
+        color: brandcolor,
       },
       checkbox: {
         margin: '32px 0 16px 0',
@@ -103,7 +104,7 @@ export default class Login extends Component {
         borderBottom: `2px solid ${red700}`,
       },
       checkboxIcon: {
-        fill: speedGreen,
+        fill: brandcolor,
       },
       checkboxIconError: {
         fill: red700,
@@ -173,7 +174,7 @@ export default class Login extends Component {
                   label="Sign Up"
                   type="submit"
                   style={styles.button}
-                  backgroundColor={speedGreen}
+                  backgroundColor={brandcolor}
                   labelColor="#FFF"
                   onClick={onSubmit}
                 />
@@ -194,7 +195,7 @@ export default class Login extends Component {
           message={snackMessage}
           autoHideDuration={3000}
           onRequestClose={onSnackClosed}
-          bodyStyle={{ backgroundColor: speedGreen }}
+          bodyStyle={{ backgroundColor: brandcolor }}
         />
       </div>
     )

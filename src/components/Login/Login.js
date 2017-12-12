@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import Snackbar from 'material-ui/Snackbar'
 import LinearProgress from 'material-ui/LinearProgress'
+import { brandcolor } from '../../styles/colors'
 import './Login.css'
 
 export default class Login extends Component {
@@ -35,7 +36,6 @@ export default class Login extends Component {
   }
 
   render() {
-    const speedGreen = '#54C0A0'
     const {
       email,
       password,
@@ -61,10 +61,10 @@ export default class Login extends Component {
         width: 328,
       },
       underlineStyle: {
-        borderColor: speedGreen,
+        borderColor: brandcolor,
       },
       labelStyle: {
-        color: speedGreen,
+        color: brandcolor,
       },
     }
 
@@ -104,14 +104,14 @@ export default class Login extends Component {
                 label="Sign In"
                 type="submit"
                 style={styles.button}
-                backgroundColor={speedGreen}
+                backgroundColor={brandcolor}
                 labelColor="#FFF"
                 onClick={onSubmit}
               />
             </form>
 
             <p className="login-copy">
-              Don’t have a SpeedETab account?{' '}
+              Don’t have an account?{' '}
               <Link to="/signup" className="login-signup">
                 Sign Up
               </Link>
@@ -127,7 +127,7 @@ export default class Login extends Component {
           message={snackMessage}
           autoHideDuration={3000}
           onRequestClose={onSnackClosed}
-          bodyStyle={{ backgroundColor: speedGreen }}
+          bodyStyle={{ backgroundColor: brandcolor }}
         />
       </div>
     )

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { emailValid, getEmailErrorMsg } from '../../Helpers/validation'
+import { emailValid, getEmailErrorMsg } from '../../helpers/validation'
 import ForgotPassword from './ForgotPassword'
 import AuthService from '../../Services/AuthService'
-import { getEmailErrors } from '../../Helpers/helpers'
+import { getEmailErrors } from '../../helpers/helpers'
 
 export default class ForgotPasswordContainer extends Component {
   constructor(props) {

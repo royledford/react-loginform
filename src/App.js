@@ -10,12 +10,17 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 // ----------------------------------------------------------
 
 import PrivateRoute from './PrivateRoute'
-import LoginContainer from './Components/Login/LoginContainer'
-import SignupContainer from './Components/Login/SignupContainer'
-import TermsOfService from './Components/Login/TermsOfService'
-import PrivacyPolicy from './Components/Login/PrivacyPolicy'
-import ForgotPasswordContainer from './Components/Login/ForgotPasswordContainer'
+import LoginContainer from './components/Login/LoginContainer'
+import SignupContainer from './components/Login/SignupContainer'
+import TermsOfService from './components/Login/TermsOfService'
+import PrivacyPolicy from './components/Login/PrivacyPolicy'
+import ForgotPasswordContainer from './components/Login/ForgotPasswordContainer'
+import Dashboard from './components/Dashboard/Dashboard'
 import NotFound from './NotFound'
+import './vendor/normalize.css'
+import './vendor/reset.css'
+import './styles/base.css'
+import './styles/vars.css'
 
 // ----------------------------------------------------------
 // Needed for onTouchTap
@@ -29,6 +34,7 @@ class App extends Component {
       <MuiThemeProvider>
         <Router>
           <Switch>
+            <Route exact path="/" component={LoginContainer} />
             <Route path="/login" component={LoginContainer} />
             <Route path="/signup" component={SignupContainer} />
             <Route path="/terms-of-service" component={TermsOfService} />

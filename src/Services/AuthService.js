@@ -14,18 +14,18 @@ const AuthService = {
   },
 
   submitLogin: function(authParams) {
-    let axios = require('axios')
-    return axios.post(process.env.REACT_APP_BASE_URL + '/identity/tokens.json', authParams)
+    // let axios = require('axios')
+    // return axios.post(process.env.REACT_APP_BASE_URL + '/identity/tokens.json', authParams)
   },
 
   createUser: function(userParams) {
-    let axios = require('axios')
-    return axios.post(process.env.REACT_APP_BASE_URL + '/identity/user.json', userParams)
+    // let axios = require('axios')
+    // return axios.post(process.env.REACT_APP_BASE_URL + '/identity/user.json', userParams)
   },
 
   resetPassword: function(userParams) {
-    let axios = require('axios')
-    return axios.post(process.env.REACT_APP_BASE_URL + '/identity/passwords/tokens', userParams)
+    // let axios = require('axios')
+    // return axios.post(process.env.REACT_APP_BASE_URL + '/identity/passwords/tokens', userParams)
   },
 
   getToken: function() {

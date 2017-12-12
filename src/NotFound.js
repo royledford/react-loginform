@@ -2,7 +2,7 @@ import React from 'react'
 import broken from './img/broken.gif'
 import FlatButton from 'material-ui/FlatButton'
 import { Link } from 'react-router-dom'
-import logo from './img/s-logo-cs5-white.svg'
+import Logo from './components/Common/Logo'
 
 import './NotFound.css'
 
@@ -11,9 +11,9 @@ const NotFound = () => {
     <div className="page-container notfound-wrap">
       <div className="bg" style={{ backgroundImage: 'url(' + broken + ')' }} />
       <div className="notfound-header">
-        <img src={logo} style={{ width: 50, height: 50 }} />
+        <Logo width={50} />
         <Link to="/">
-          <FlatButton label="Merchant Portal" type="submit" labelStyle={{ color: 'white' }} />
+          <FlatButton label="Go somewhere fun" type="submit" labelStyle={{ color: 'white' }} />
         </Link>
       </div>
       <div className="notfound-copy">

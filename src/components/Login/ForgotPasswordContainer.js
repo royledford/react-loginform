@@ -10,12 +10,16 @@ export default class ForgotPasswordContainer extends Component {
     super(props)
     this.state = {
       email: '',
+
       emailErrorMsg: '',
       snackMessage: '',
+
       showSnack: false,
       showConfirmation: false,
       redirectToLogin: false,
+
       loading: false,
+      submitFailed: false,
     }
   }
 
@@ -35,6 +39,8 @@ export default class ForgotPasswordContainer extends Component {
   }
 
   handleEmailValidation = event => {
+    if (!this.state.submitFailed) return
+
     const enteredValue = event.target.value
     if (emailValid(enteredValue)) {
       this.setState({ emailErrorMsg: '' })

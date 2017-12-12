@@ -33,16 +33,6 @@ export const getPasswordErrors = errorObject => {
 }
 
 //-------------------------------------------------------------------------
-// Wait for specified time in ms.
-//-------------------------------------------------------------------------
-export const sleep = sleepDuration => {
-  var now = new Date().getTime()
-  while (new Date().getTime() < now + sleepDuration) {
-    /* do nothing */
-  }
-}
-
-//-------------------------------------------------------------------------
 // Format the indvidual error message from AuthService into an
 // single prettified string
 //-------------------------------------------------------------------------

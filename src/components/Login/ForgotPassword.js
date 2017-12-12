@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+
 import Logo from '../Common/Logo'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
@@ -9,9 +10,9 @@ import Snackbar from 'material-ui/Snackbar'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import LinearProgress from 'material-ui/LinearProgress'
-import './ForgotPassword.css'
+import { brandcolor } from '../../styles/colors'
 
-// TODO: Confirm copy that is in confirmation dialog.
+import './ForgotPassword.css'
 
 export default class ForgotPassword extends Component {
   static propTypes = {
@@ -43,7 +44,6 @@ export default class ForgotPassword extends Component {
   }
 
   render() {
-    const speedGreen = '#54C0A0'
     const {
       email,
       errorEmail,
@@ -69,17 +69,17 @@ export default class ForgotPassword extends Component {
         width: 128,
       },
       underlineStyle: {
-        borderColor: speedGreen,
+        borderColor: brandcolor,
       },
       labelStyle: {
-        color: speedGreen,
+        color: brandcolor,
       },
     }
 
     return (
       <div className="forgotpassword-wrap">
         <Paper style={{ width: 370, height: 430 }} zDepth={1}>
-        {loading && <LinearProgress mode="indeterminate" />}
+          {loading && <LinearProgress mode="indeterminate" />}
           <div className="forgotpassword-column">
             <Logo height="92" width="92" className="forgotpassword-logo" />
             <h1>Forgot your password?</h1>
@@ -107,7 +107,7 @@ export default class ForgotPassword extends Component {
                   label="Reset"
                   type="submit"
                   style={styles.button}
-                  backgroundColor={speedGreen}
+                  backgroundColor={brandcolor}
                   labelColor="#FFF"
                   onClick={onSubmit}
                 />
@@ -121,7 +121,7 @@ export default class ForgotPassword extends Component {
           message={snackMessage}
           autoHideDuration={3000}
           onRequestClose={onSnackClosed}
-          bodyStyle={{ backgroundColor: speedGreen }}
+          bodyStyle={{ backgroundColor: brandcolor }}
         />
 
         <Dialog

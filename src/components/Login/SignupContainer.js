@@ -91,6 +91,8 @@ export default class LoginContainer extends Component {
   }
 
   handlePasswordConfirmValidation = event => {
+    if (!this.state.submitFailed) return
+
     const enteredValue = event.target.value
     const password = this.state.password
 

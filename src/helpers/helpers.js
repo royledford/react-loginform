@@ -16,7 +16,10 @@
 //   return fullString
 // }
 
-export const getEmailErrors = errorObject => {
+//-------------------------------------------------------------------------
+// Get the first email error from an error object
+//-------------------------------------------------------------------------
+export const getFirstEmailError = errorObject => {
   if (errorObject.hasOwnProperty('email')) {
     return errorObject.email[0]
   } else {
@@ -24,7 +27,10 @@ export const getEmailErrors = errorObject => {
   }
 }
 
-export const getPasswordErrors = errorObject => {
+//-------------------------------------------------------------------------
+// Get the first password error from an error object
+//-------------------------------------------------------------------------
+export const getFirstPasswordError = errorObject => {
   if (errorObject.hasOwnProperty('password')) {
     return errorObject.password[0]
   } else {
@@ -37,11 +43,11 @@ export const getPasswordErrors = errorObject => {
 // single prettified string
 //-------------------------------------------------------------------------
 export const formatErrorMessage = (errorType, errorMessage) => {
-  return capitalizeFirstLetter(errorType) + ' ' + errorMessage + '. '
+  return capitalizeFirstLetter(errorType) + ' ' + errorMessage + '. '.trim()
 }
 
 export const capitalizeFirstLetter = string => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
+  return string.charAt(0).toUpperCase() + string.slice(1).trim()
 }
 
 //-------------------------------------------------------------------------

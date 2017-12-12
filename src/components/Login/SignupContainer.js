@@ -9,7 +9,7 @@ import {
   getPasswordConfirmErrorMsg,
 } from '../../helpers/validation'
 import AuthService from '../../Services/AuthService'
-import { getEmailErrors, getPasswordErrors } from '../../helpers/helpers'
+import { getFirstEmailError, getFirstPasswordError } from '../../helpers/helpers'
 
 import Signup from './Signup'
 
@@ -167,8 +167,8 @@ export default class LoginContainer extends Component {
           console.log(error.response.data.errors)
 
           self.setState({
-            emailErrorMsg: getEmailErrors(error.response.data.errors),
-            emailPasswordMsg: getPasswordErrors(error.response.data.errors),
+            emailErrorMsg: getFirstEmailError(error.response.data.errors),
+            emailPasswordMsg: getFirstPasswordError(error.response.data.errors),
             loading: false,
           })
         } else {

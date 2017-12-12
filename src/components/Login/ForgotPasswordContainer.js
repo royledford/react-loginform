@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { emailValid, getEmailErrorMsg } from '../../helpers/validation'
 import ForgotPassword from './ForgotPassword'
 import AuthService from '../../Services/AuthService'
-import { getEmailErrors } from '../../helpers/helpers'
+import { getFirstEmailError } from '../../helpers/helpers'
 
 export default class ForgotPasswordContainer extends Component {
   constructor(props) {
@@ -83,7 +83,7 @@ export default class ForgotPasswordContainer extends Component {
           self.setState({
             showConfirmation: false,
             loading: false,
-            emailErrorMsg: getEmailErrors(error.response.data.errors),
+            emailErrorMsg: getFirstEmailError(error.response.data.errors),
           })
         } else {
           self.setState({

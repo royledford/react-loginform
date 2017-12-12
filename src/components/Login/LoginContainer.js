@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { emailValid, passwordValid, getEmailErrorMsg, getPasswordErrorMsg } from '../../helpers/validation'
-import { getEmailErrors, getPasswordErrors } from '../../helpers/helpers'
+import { getFirstEmailError, getFirstPasswordError } from '../../helpers/helpers'
 import AuthService from '../../Services/AuthService'
 import Login from './Login'
 
@@ -100,8 +100,8 @@ export default class LoginContainer extends Component {
         if (error.response.status === 400) {
           // There is a problem with the passed credentials.
           self.setState({
-            emailErrorMsg: getEmailErrors(error.response.data.errors),
-            emailPasswordMsg: getPasswordErrors(error.response.data.errors),
+            emailErrorMsg: getFirstEmailError(error.response.data.errors),
+            emailPasswordMsg: getFirstPasswordError(error.response.data.errors),
             loading: false,
           })
         } else {

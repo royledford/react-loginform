@@ -143,6 +143,7 @@ export default class Login extends Component {
                 onChange={onEmailChange}
                 errorText={errorEmail}
                 onBlur={onEmailBlur}
+                tabindex={1}
               />
               <TextField
                 hintText="Enter password"
@@ -155,6 +156,7 @@ export default class Login extends Component {
                 onChange={onPasswordChange}
                 errorText={errorPassword}
                 onBlur={onPasswordBlur}
+                tabindex={2}
               />
               <TextField
                 hintText="Retype password"
@@ -167,9 +169,14 @@ export default class Login extends Component {
                 onChange={onPasswordConfirmChange}
                 errorText={errorPasswordConfirm}
                 onBlur={onPasswordConfirmBlur}
+                tabindex={3}
               />
               <div className="signup-buttons">
-                <RaisedButton label="Cancel" style={styles.button} containerElement={<Link to="/login" />} />
+                <RaisedButton
+                  label="Cancel"
+                  style={styles.button}
+                  containerElement={<Link to="/login" tabindex={6} />}
+                />
                 <RaisedButton
                   label="Sign Up"
                   type="submit"
@@ -177,6 +184,7 @@ export default class Login extends Component {
                   backgroundColor={brandcolor}
                   labelColor="#FFF"
                   onClick={onSubmit}
+                  tabindex={5}
                 />
               </div>
               <Checkbox
@@ -186,6 +194,7 @@ export default class Login extends Component {
                 style={errorTermsAgreed ? styles.checkboxError : styles.checkbox}
                 iconStyle={errorTermsAgreed ? styles.checkboxIconError : styles.checkboxIcon}
                 labelStyle={{ zIndex: 3 }}
+                tabindex={4}
               />
             </form>
           </div>

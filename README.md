@@ -42,19 +42,28 @@ Clone this project locally
 git clone https://github.com/royledford/react-loginform.git
 ```
 
-Copy the following into your project.
+Copy the following folders into your project:
 
 * `./react-loginform/src/components/Common`
 * `./react-loginform/src/components/Login`
-* `./react-loginform/src/components/helpers`
-* `./react-loginform/src/components/img`
-* `./react-loginform/src/components/Services`
-* `./react-loginform/src/components/styles`
-* `./react-loginform/src/components/vendor`
+* `./react-loginform/src/helpers`
+* `./react-loginform/src/img`
+* `./react-loginform/src/Services`
+* `./react-loginform/src/styles`
+* `./react-loginform/src/vendor`
+
+Copy the following files into your project:
+
+* ./AuthRoute.js
+* ./NotFound.css
+* ./NotFound.js
+* ./PrivateRoute.js
 
 Add the following to you App.js (or wherever the routing is happening).
 
 ```javascript
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import LoginContainer from './components/Login/LoginContainer'
 import SignupContainer from './components/Login/SignupContainer'
 import TermsOfService from './components/Login/TermsOfService'
@@ -80,6 +89,6 @@ Update `./src/components/Services/AuthService.js` to use the correct Api or auth
 
 The logo is located in `./src/components/Common` and is an inline svg. Update to the logo for the app.
 
-Background image for the NotFound component is located in `./src/components/img/broken.gif`. You can update the gif and the contents of `./src/components/NotFound.js` to customize for your app.
+Background image for the NotFound component is located in `./src/img/broken.gif`. You can update the gif and the contents of `./src/NotFound.js` to customize for your app.
 
 > This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
